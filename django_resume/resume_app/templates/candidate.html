@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load myfilter  %}
+<html lang="en">
+  <head>
+    <title>Candidate</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+        <h1 class="alert-danger taxt-center p-3">Condidate Details</h1>
+        <div class="row">
+            <div class="col-sm-10">
+                <h3 class="text-center"><u>Resume</u></h3>
+                <p class="float-end">Application No: {{candidate.id}}</P>
+                <img src="{{candidate.profile_image.url}}" alt="" 
+                class="img-fluid img-thumbnail float-end mt-2" width="150" 
+                height="150">
+                <p>Name: {{candidate.name}}</P>
+                <p>Date of Birth: {{candidate.dob}}</P>
+                <p>Gender: {{candidate.gender}}</P>
+                <p>Address: {{candidate.locality}}, {{candidate.city}}, {{candidate.state}} - {{candidate.pin}}</P>
+                <p>Mobile No: {{candidate.mobile}}</P>
+                <p>Email ID: {{candidate.email}}</P>
+                <p>Preferred Job Cities: {{candidate.job_city|remove_special:"[]'"}}</P>
+                <p>Attachment: <a href="{{candidate.my_file.url}}">Download File</a></P>
+                    <div class="text-center">
+                        <a href="/" class="btn btn-danger">Back to Home</a>
+                    </div>
+            </div>
+        </div>  
+
+    </div>
+    <script src="https://cdn.jsdeliver.net/npm/bootstrap@5.0.0-beta2/
+    dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/
+    tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+
+  </body>
+</html>
